@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/donate.css">
+    <link rel="shortcut icon" href="./assets/DUWE_Logo.svg" type="image/x-icon">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+    <script>
+        console.log(window.location.hash)
+          if(window.location.hash == "#sucess" ){
+            alert("wohoo a successful donation, we say thank you")
+        }
+        if (window.location.hash === "#cancel"){
+            alert("Donation failed, please try again")
+        }
+    </script>
+
+    <title>
+        Donate Us
+    </title>
+</head>
+<body>
+    <div class="donate">
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>we know that you are very excited , we are comming soon ...</p>
+            </div>
+      
+          </div>
+          <div id="aboutmodule" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Marvin and Samantha Minott, owners of the Sankofayah clothing company realized that NOW is the time to reintroduce the power of group economics—especially for a people with the spending power of over 2 trillion dollars.
+
+                DUWE (Diaspora Universal Welfare Economics) is the change agent that will create a new and consistent economic cycle, giving black people the power to truly build and stabilize our own financial backing.
+                
+                Through DUWE, consumers who love to “Shop Black” can actively participate in group economics with an infrastructure that financially aids in the development of our communities. Conversely, Black Business owners can expand their customer reach to increase profits and obtain business resources.
+                
+                “Black people must practice group economics to survive in this capitalistic society.”
+                ~Claude Anderson</p>
+            </div>
+      
+          </div>
+        <div class="header">
+            <a href="/index.html" class="logo"><img width="62px" height="62px" src="assets/DUWE_Logo.svg"></a>
+            <div class="header-right">
+                <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+                <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+                <a class="myBtn" class="active" href="/donate.html">Donate</a>
+                
+                
+            </div>
+            <img onclick="openx()" id="open_menu" class="header-menu-icon" src="assets/menu.png">
+            </img>
+
+            <div class="header-page">
+                <div class="header-right">
+                    <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+                    <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+                    <a class="myBtn" class="active" href="/donate.html">Donate</a>
+                </div>
+            </div>
+        </div>
+        <div class="app">
+            <div class="app-top">
+                <div class="app-top-img">
+                    <div class="app-top-img-v1">
+                        <div class="app-top-img-v2">
+                            <img class="app-top-img-tag" src="assets/africa-kid.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-left">
+                <div class="app-left-content">
+                    <h1 class="title">
+                            DONATE TO US
+                    </h1>
+                    <h6 class="discription">
+                        We are building amazing services just for you , donate to us and make the process faster
+
+                    </h6>
+                    <div class="donate-type">
+                        <div onclick="a1()" id="a1" class="first-type">
+                            5$
+                        </div>
+                        <div onclick="a2()" id="a2" class="second-type">
+                            10$
+                        </div>
+                        <div onclick="a3()" id="a3" class="third-type">
+                            20$
+                        </div>
+                    </div>
+                    <a onclick="donate()" id="donate">
+                        Donate
+                    </a>
+                </div>
+            </div>
+            <div class="app-right">
+                <div class="app-right-img">
+                    <div class="app-right-img-v1">
+                        <div class="app-right-img-v2">
+                            <img class="app-right-img-tag" src="assets/africa-kid.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script>
+      
+        var state = "price_1JhvmJJvGKHXRPYQ0ss1rXUP";
+        document.getElementById("a1").classList.add("donate-selected");
+        function setstate(a){
+            console.log("setstate")
+            for(var i  = 1 ; i <= 3 ; i++){
+                document.getElementById("a" + i ).classList.forEach(e=>{
+                        console.log("a" + i)
+                        console.log(e)
+
+                        if(e === "donate-selected"){
+                            console.log(e)
+                            document.getElementById("a" + i).classList.remove("donate-selected"); 
+                        }
+                }) ;
+            }
+            document.getElementById(a).classList.add("donate-selected") ;
+        }
+        function a1() {
+            setstate("a1") ;
+            state = "price_1JhvmJJvGKHXRPYQ0ss1rXUP" ;
+        }
+        function a2() {
+            state = "price_1JhvmJJvGKHXRPYQ533CNvqI" ;
+            setstate("a2") ;
+        }
+        function a3() {
+            state = "price_1JhvmJJvGKHXRPYQVc6TybBE" ;
+            setstate("a3") ;
+        }
+        function donate() {
+            var stripe = Stripe(
+                'pk_live_51I32plJvGKHXRPYQ2qSoGrZHJFkQfQe5ab8d9P04kugUquPUyQKOljspOgn0q1vNCsSxGS6hH859VEBWkOcYA4hi00CDd2PX9S'
+            );
+            console.log("clicked")
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: state, // Replace with the ID of your price
+                    quantity: 1,
+                }],
+                mode: 'payment',
+                successUrl: 'http://127.0.0.1:5501/donate.html#sucess',
+                cancelUrl: 'http://127.0.0.1:5501/donate.html#cancel',
+            }).then(function (result) {
+                console.log(result.console.error.message);
+            });
+        }
+    </script>
+</body>
+</html>
