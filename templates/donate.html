@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style/donate.css') }}" >
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/assets/DUWE_Logo.svg') }}" type="image/x-icon">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+    <script>
+        console.log(window.location.hash)
+        if (window.location.hash == "#sucess") {
+            alert("wohoo a successful donation, we say thank you")
+        }
+        if (window.location.hash === "#cancel") {
+            alert("Donation failed, please try again")
+        }
+    </script>
+
+    <title>
+        Donate Us
+    </title>
+</head>
+
+<body>
+    <div class="donate">
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>we know that you are very excited , we are comming soon ...</p>
+            </div>
+
+        </div>
+        <div id="aboutmodule" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Marvin and Samantha Minott, owners of the Sankofayah clothing company realized that NOW is the time
+                    to reintroduce the power of group economics—especially for a people with the spending power of over
+                    2 trillion dollars.
+
+                    DUWE (Diaspora Universal Welfare Economics) is the change agent that will create a new and
+                    consistent economic cycle, giving black people the power to truly build and stabilize our own
+                    financial backing.
+
+                    Through DUWE, consumers who love to “Shop Black” can actively participate in group economics with an
+                    infrastructure that financially aids in the development of our communities. Conversely, Black
+                    Business owners can expand their customer reach to increase profits and obtain business resources.
+
+                    “Black people must practice group economics to survive in this capitalistic society.”
+                    ~Claude Anderson</p>
+            </div>
+
+        </div>
+        <div class="header">
+            <a href="/" class="logo"><img width="62px" height="62px" src="{{ url_for('static', filename='/assets/DUWE_Logo.svg') }}"  ></a>
+            <div class="header-right">
+                <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+                <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+                <a class="myBtn" class="active" href="/donate">Donate</a>
+
+
+            </div>
+            <img onclick="openx()" id="open_menu" class="header-menu-icon" src="{{ url_for('static', filename='/assets/menu.png') }}"  >
+            </img>
+
+            <div class="header-page">
+                <div class="header-right">
+                    <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+                    <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+                    <a class="myBtn" class="active" href="/donate">Donate</a>
+                </div>
+            </div>
+        </div>
+        <div class="app">
+            <div class="app-top">
+                <div class="app-top-img">
+                    <div class="app-top-img-v1">
+                        <div class="app-top-img-v2">
+                            <img class="app-top-img-tag" src="{{ url_for('static', filename='/assets/africa-kid.jpg') }}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-left">
+                <div class="app-left-content">
+                    <h1 class="title">
+                        DONATE TO US
+                    </h1>
+                    <h6 class="discription">
+                        We are building amazing services just for you , donate to us and make the process faster
+
+                    </h6>
+                    <div class="donate-type">
+                        <div class="donate-type-con">
+                            <span>$</span>
+                            <input type="number" placeholder="20.00" id="donate_input" class="donate_input" />
+
+                        </div>
+                    </div>
+                    <a onclick="donate()" id="donate">
+                        Donate
+                    </a>
+                </div>
+            </div>
+            <div class="app-right">
+                <div class="app-right-img">
+                    <div class="app-right-img-v1">
+                        <div class="app-right-img-v2">
+                            <img class="app-right-img-tag" src="{{ url_for('static', filename='/assets/africa-kid.jpg') }}"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='/js/main.js') }}" ></script>
+    <script>
+        var stripe = Stripe(
+            'pk_test_51I32plJvGKHXRPYQZQVs1fhv5jM8pBvRCgO3oJ1Wa0LYkeZ19eLvMt3jYaODVn6to58Tpxc8fkZca7vYFnJbxAVJ00w8ITSdSx'
+        );
+        var amount = document.getElementById('donate_input');
+        function donate() {
+            fetch('/create-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: amount.value,
+                    }),
+                })
+                .then((response) => response.json())
+                .then((session) => {
+                    stripe.redirectToCheckout({
+                        sessionId: session.id
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

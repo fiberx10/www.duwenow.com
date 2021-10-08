@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/style/stylesheet.css') }}" >
+  <link rel="shortcut icon"  href="{{ url_for('static', filename='/assets/DUWE_Logo.svg') }}"  type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+
+  <title>Document</title>
+</head>
+
+
+
+
+
+<body>
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>we know that you are very excited , we are comming soon ...</p>
+      </div>
+
+    </div>
+
+    <div id="aboutmodule" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Marvin and Samantha Minott, owners of the Sankofayah clothing company realized that NOW is the time to reintroduce the power of group economics—especially for a people with the spending power of over 2 trillion dollars.
+
+          DUWE (Diaspora Universal Welfare Economics) is the change agent that will create a new and consistent economic cycle, giving black people the power to truly build and stabilize our own financial backing.
+          
+          Through DUWE, consumers who love to “Shop Black” can actively participate in group economics with an infrastructure that financially aids in the development of our communities. Conversely, Black Business owners can expand their customer reach to increase profits and obtain business resources.
+          
+          “Black people must practice group economics to survive in this capitalistic society.”
+          ~Claude Anderson</p>
+      </div>
+
+    </div>
+    <div class="header">
+      <a href="/" class="logo"><img width="62px" height="62px" src="{{ url_for('static', filename='/assets/DUWE_Logo.svg') }}"  ></a>
+      <div class="header-right">
+        <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+        <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+        <a class="myBtn" class="active" href="/donate">Donate</a>
+      </div>
+      <img onclick="openx()" id="open_menu" class="header-menu-icon" src="{{ url_for('static', filename='/assets/menu.png') }}">
+      </img>
+
+
+      <div class="header-page">
+        <div class="header-right">
+          <a class="myBtn" onclick="openaboutmodel()" href="#">About Us</a>
+          <a class="myBtn" onclick="openmodel()" href="#">Services</a>
+          <a class="myBtn" class="active" href="/donate">Donate</a>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="app">
+
+    <div class="top_header">
+      <div class="top_header_insider">
+        <div class="top_header_top"> 
+
+        </div>
+        <div class="top_header_bottom">
+          <div class="top_header_bottom_left">
+            <div class="top_header_bottom_left_container">
+              <h1 class="comming">
+                DUWE LAUNCH COMING SOON
+              </h1>
+              <h1>
+                GROUP ECONOMICS IN ACTION
+              </h1>
+              <p>
+                The only web application that tracks spending power in the black community.
+              </p>
+             
+            </div>
+
+          </div>
+          <div class="top_header_bottom_right">
+
+            <svg  class="rella" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 3279.04 3797.51">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #d1d3d4;
+                  }
+
+                  .cls-2 {
+                    fill: #f1f2f2;
+                  }
+
+                  .cls-3 {
+                    fill: #39b54a;
+                  }
+
+                  .cls-4 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <circle class="cls-1" cx="2430.8" cy="3344.51" r="56.16" />
+                  <circle class="cls-1" cx="1091.58" cy="3647.02" r="66.01" />
+                  <rect class="cls-2" width="2202.1" height="3797.51" rx="193.96" />
+                  <rect class="cls-1" x="755.46" y="182.62" width="691.17" height="66.41" />
+                  
+                  <image width="3264" height="4928" transform="translate(67.71 349.8) scale(0.63 0.64)"
+                    xlink:href="{{ url_for('static', filename='/assets/africa-women.jpg') }}"  />
+                  
+                  <rect class="cls-2" x="1657.52" y="765.47" width="1563.84" height="2427.84" />
+                  <rect class="cls-2" x="1615.41" y="399.11" width="1663.63" height="3031.8" rx="150.63" />
+                  <rect class="cls-1" x="2186.14" y="544.91" width="522.16" height="53.02" />
+                  <rect class="cls-3" x="1653.2" y="704.99" width="1555.2" height="2488.32" />
+                  <path class="cls-4"
+                    d="M2517.54,1647.93c-.55,10.89-1,20.64-1.66,33.38l-30-40c-8.51-11.24-17-22.25-25.11-33.81-2.13-3.15-3.74-9.17-2-11.8,17.71-24.89,36.18-49.35,56.91-73.45.59,9.59,1.15,19.19,1.66,27.52h134.15c-4.25,6.77-9,14.59-13.83,22.38-12.3,19.66-25,39.32-36.77,59.65-6.64,11.36-15.67,16.63-29.8,16.08C2553.76,1647.38,2536.22,1647.93,2517.54,1647.93Zm-82.61-357.12c17.28,26.66,33.75,53.75,51.07,80.45,4,6.22,2,9-4.26,11.8-7.57,3.58-14.72,7.86-23.83,13,34.3,2.6,66.1,5.23,97.89,7.16a16.49,16.49,0,0,0,12.77-5c14.51-26.7,28.26-54.23,43.67-84.35l-32.48,16.64c-10.17-16.09-19.19-32.21-30.26-47a30.46,30.46,0,0,0-20-11.21c-36.73-1.1-73.59-.51-111.52-.51A164.51,164.51,0,0,1,2434.93,1290.81Zm-92.49,197.24,32.82,16.55c-15.58-30.2-29.41-57.49-43.89-84.46a13.61,13.61,0,0,0-10.34-4.76c-18,.71-35.92,2.08-53.84,3.46-14.26,1.1-28.51,2.52-45.67,3.93l31.2,17.34c-9.75,15.73-18.77,30.36-28,45-5.49,8.57-6.89,16.87-1.1,26,18.47,28.94,36.6,58,54.73,86.86C2294.13,1558.24,2321.07,1524.85,2342.44,1488.05Zm94.23-154.46a12.71,12.71,0,0,0,.47-11,185.72,185.72,0,0,0-16.6-25.83c-19.11-25-58.44-28.2-76.06-4.76-17,22.57-30.47,47.19-46,72l90,47.93c16.7-26.93,32.61-52.54,48.19-78.34Zm99.94,120.48c17.23,27.21,33.66,53.4,50.43,79.35a10.9,10.9,0,0,0,7.79,3.94,293.48,293.48,0,0,0,37.16-.52c31.66-3.46,51.92-34.48,38.3-59.84-12.77-23.6-28.34-46.21-43.58-70.78Zm-112.49,105.78c0-2.24-6-6.22-9.33-6.25q-43.27-.78-86.48,0a15.32,15.32,0,0,0-11.07,4.32c-7.44,12.54-15.79,25.13-20,38.69-7,23,11.62,49.23,36.69,50.88,29.41,1.89,59.08.44,90.57.44,0-30.4.21-59.22-.42-88Z" />
+                  <path class="cls-4"
+                    d="M2126.13,2175.55v-276.8h54.92c55.87,0,76.36,57.83,76.36,139.16,0,79.73-20.49,137.58-76.36,137.58ZM2182,1973.1h-3.14v128.2H2182c14,0,22.64-24.22,22.64-63.33,0-41-8.68-64.87-22.64-64.87Z" />
+                  <path class="cls-4"
+                    d="M2296.17,2067.69V1898.75h52.76v161.42c0,26.17,1.92,40.65,10.84,40.65s11.08-14.48,11.08-40.65V1898.75h52v168.76c0,65.67-19.27,115.68-64.07,115.68S2296.17,2133.36,2296.17,2067.69Z" />
+                  <path class="cls-4"
+                    d="M2539.93,2175.55h-51.54l-31.57-276.8h53.28l11.55,161.81h1.22l12.25-161.81h47l13.25,161.81h.73l11.31-161.81h50.83l-32,276.71H2574.7l-17.1-154h-.73Z" />
+                  <path class="cls-4"
+                    d="M2695.77,1898.75h91.05v74.64h-41.2v27.75H2783v69.33h-37.35v29.32H2790v75.82H2695.8Z" />
+                </g>
+              </g>
+            </svg>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="bottom_header">
+      <div class="top_header_left">
+        <div class="login-page" id="no-2">
+          <div class="form">
+            <div class="login">
+              <div class="login-header">
+
+                <p id="guest" class="guest">BUSINESS</p>
+              </div>
+            </div>
+            <form class="login-form"
+            action="https://duwenow.us5.list-manage.com/subscribe/post?u=98bca6196c50e6382552111a1&amp;id=22291803c6"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_blank" novalidate>
+            <div class="input_email_submit">
+              <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Your E-mail address " />
+              <input type="submit" id="submit" class="guest" value="sell with us ">
+            </div>
+          
+            <p class="guest message">THANKS FOR JOINING THE BUSINESS WAITLIST FOR HIGH INTERESTED SHOPPERS.
+              STAY UP TO DATE FOR WHEN WE LAUNCH </a></p>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                name="b_98bca6196c50e6382552111a1_22291803c6" tabindex="-1" value=""></div>
+            <input type="hidden" class="mce-TYPE" id="mce-TYPE" name="TYPE" value="Vendor" />
+          
+            <div class="switch-button">
+              <input id="switch-button-checkbox" class="switch-button-checkbox" onchange="check()"
+                type="checkbox"></input>
+              <label id="switch-button-label" class="switch-button-label" for=""><span
+                  class="switch-button-label-span">Business</span></label>
+            </div>
+          </form>
+
+          <br/>            
+          <div class="form-separator" ></div>
+          <a href="/donate" class="todonate">
+            DONATE TO US
+          </a>
+
+          </div>
+       
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="copyright">
+      <snap>
+        &copy 2021 copyright
+      </snap>
+    </div>
+
+  </div>
+
+  <div class="app-mobile">
+    <aria-role>
+      <div onclick="toform()" class="join-now">
+        join now
+    </div>
+    </aria-role>
+    
+
+    <div class="header-section">
+      <div class="header-section-insider">
+         <h1 class="header-section-insider-title">
+        DUWE LAUNCH COMING SOON
+        </h1>
+        <h1  class="header-section-insider-subtitle">
+        GROUP ECONOMICS IN ACTION
+        </h1>
+        <h6  class="header-section-insider-para">
+        The only web application that tracks spending power in the black community.
+        </h6>
+        </div>
+     
+    </div>
+    <div class="phone-section">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 3279.04 3797.51">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #d1d3d4;
+                  }
+
+                  .cls-2 {
+                    fill: #f1f2f2;
+                  }
+
+                  .cls-3 {
+                    fill: #39b54a;
+                  }
+
+                  .cls-4 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <circle class="cls-1" cx="2430.8" cy="3344.51" r="56.16" />
+                  <circle class="cls-1" cx="1091.58" cy="3647.02" r="66.01" />
+                  <rect class="cls-2" width="2202.1" height="3797.51" rx="193.96" />
+                  <rect class="cls-1" x="755.46" y="182.62" width="691.17" height="66.41" />
+                  <image width="3264" height="4928" transform="translate(67.71 349.8) scale(0.63 0.64)"
+                    xlink:href="{{ url_for('static', filename='/assets/africa-women.jpg') }}"  />
+                  <rect class="cls-2" x="1657.52" y="765.47" width="1563.84" height="2427.84" />
+                  <rect class="cls-2" x="1615.41" y="399.11" width="1663.63" height="3031.8" rx="150.63" />
+                  <rect class="cls-1" x="2186.14" y="544.91" width="522.16" height="53.02" />
+                  <rect class="cls-3" x="1653.2" y="704.99" width="1555.2" height="2488.32" />
+                  <path class="cls-4"
+                    d="M2517.54,1647.93c-.55,10.89-1,20.64-1.66,33.38l-30-40c-8.51-11.24-17-22.25-25.11-33.81-2.13-3.15-3.74-9.17-2-11.8,17.71-24.89,36.18-49.35,56.91-73.45.59,9.59,1.15,19.19,1.66,27.52h134.15c-4.25,6.77-9,14.59-13.83,22.38-12.3,19.66-25,39.32-36.77,59.65-6.64,11.36-15.67,16.63-29.8,16.08C2553.76,1647.38,2536.22,1647.93,2517.54,1647.93Zm-82.61-357.12c17.28,26.66,33.75,53.75,51.07,80.45,4,6.22,2,9-4.26,11.8-7.57,3.58-14.72,7.86-23.83,13,34.3,2.6,66.1,5.23,97.89,7.16a16.49,16.49,0,0,0,12.77-5c14.51-26.7,28.26-54.23,43.67-84.35l-32.48,16.64c-10.17-16.09-19.19-32.21-30.26-47a30.46,30.46,0,0,0-20-11.21c-36.73-1.1-73.59-.51-111.52-.51A164.51,164.51,0,0,1,2434.93,1290.81Zm-92.49,197.24,32.82,16.55c-15.58-30.2-29.41-57.49-43.89-84.46a13.61,13.61,0,0,0-10.34-4.76c-18,.71-35.92,2.08-53.84,3.46-14.26,1.1-28.51,2.52-45.67,3.93l31.2,17.34c-9.75,15.73-18.77,30.36-28,45-5.49,8.57-6.89,16.87-1.1,26,18.47,28.94,36.6,58,54.73,86.86C2294.13,1558.24,2321.07,1524.85,2342.44,1488.05Zm94.23-154.46a12.71,12.71,0,0,0,.47-11,185.72,185.72,0,0,0-16.6-25.83c-19.11-25-58.44-28.2-76.06-4.76-17,22.57-30.47,47.19-46,72l90,47.93c16.7-26.93,32.61-52.54,48.19-78.34Zm99.94,120.48c17.23,27.21,33.66,53.4,50.43,79.35a10.9,10.9,0,0,0,7.79,3.94,293.48,293.48,0,0,0,37.16-.52c31.66-3.46,51.92-34.48,38.3-59.84-12.77-23.6-28.34-46.21-43.58-70.78Zm-112.49,105.78c0-2.24-6-6.22-9.33-6.25q-43.27-.78-86.48,0a15.32,15.32,0,0,0-11.07,4.32c-7.44,12.54-15.79,25.13-20,38.69-7,23,11.62,49.23,36.69,50.88,29.41,1.89,59.08.44,90.57.44,0-30.4.21-59.22-.42-88Z" />
+                  <path class="cls-4"
+                    d="M2126.13,2175.55v-276.8h54.92c55.87,0,76.36,57.83,76.36,139.16,0,79.73-20.49,137.58-76.36,137.58ZM2182,1973.1h-3.14v128.2H2182c14,0,22.64-24.22,22.64-63.33,0-41-8.68-64.87-22.64-64.87Z" />
+                  <path class="cls-4"
+                    d="M2296.17,2067.69V1898.75h52.76v161.42c0,26.17,1.92,40.65,10.84,40.65s11.08-14.48,11.08-40.65V1898.75h52v168.76c0,65.67-19.27,115.68-64.07,115.68S2296.17,2133.36,2296.17,2067.69Z" />
+                  <path class="cls-4"
+                    d="M2539.93,2175.55h-51.54l-31.57-276.8h53.28l11.55,161.81h1.22l12.25-161.81h47l13.25,161.81h.73l11.31-161.81h50.83l-32,276.71H2574.7l-17.1-154h-.73Z" />
+                  <path class="cls-4"
+                    d="M2695.77,1898.75h91.05v74.64h-41.2v27.75H2783v69.33h-37.35v29.32H2790v75.82H2695.8Z" />
+                </g>
+              </g>
+            </svg>
+    </div>
+    <div class="form-section">
+      <div class="login-page">
+        <div class="form">
+          <div class="login">
+            <div class="login-header">
+
+              <p id="guest" class="guest-2">BUSINESS</p>
+            </div>
+          </div>
+          <form class="login-form"
+            action="https://duwenow.us5.list-manage.com/subscribe/post?u=98bca6196c50e6382552111a1&amp;id=22291803c6"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_blank" novalidate>
+            <div class="input_email_submit">
+              <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Your E-mail address " />
+              <input type="submit" id="submit" class="guest-2" value="sell with us ">
+            </div>
+
+            <p class="guest-2 message">THANKS FOR JOINING THE BUSINESS WAITLIST FOR HIGH INTERESTED SHOPPERS.
+              STAY UP TO DATE FOR WHEN WE LAUNCH </a></p>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                name="b_98bca6196c50e6382552111a1_22291803c6" tabindex="-1" value=""></div>
+            <input type="hidden" class="mce-TYPE" id="mce-TYPE-2" name="TYPE" value="Vendor" />
+
+            <div class="switch-button">
+              <input id="switch-button-checkbox-2" class="switch-button-checkbox" onchange="check2()"
+                type="checkbox"></input>
+              <label id="switch-button-label-2" class="switch-button-label" for=""><span
+                  class="switch-button-label-span">Business</span></label>
+            </div>
+          </form>
+          <br/>            
+        <div class="form-separator" ></div>
+        <a href="/donate" class="todonate">
+          DONATE TO US
+        </a>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <div class="copyright">
+      <snap>
+        &copy 2021 copyright
+      </snap>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='/js/main.js') }}" ></script>
+
+
+
+</body>
+
+</html>
